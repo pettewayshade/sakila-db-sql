@@ -153,9 +153,9 @@ GROUP BY c.customer_id
 ORDER BY c.last_name;
 
 /*7a. The music of Queen and Kris Kristofferson have seen an unlikely resurgence. 
-	As an unintended consequence, films starting with the letters K and Q have also 
-    soared in popularity. Use subqueries to display the titles of movies starting with 
-    the letters K and Q whose language is English.*/
+		As an unintended consequence, films starting with the letters K and Q have also 
+		soared in popularity. Use subqueries to display the titles of movies starting with 
+		the letters K and Q whose language is English.*/
 SELECT 
     title
 FROM
@@ -190,8 +190,8 @@ WHERE
                     title = 'Alone Trip'));
 
 /*7c. You want to run an email marketing campaign in Canada, for which you
-	will need the names and email addresses of all Canadian customers. Use
-	joins to retrieve this information.*/
+		will need the names and email addresses of all Canadian customers. Use
+		joins to retrieve this information.*/
 SELECT 
     first_name, last_name, email
 FROM
@@ -206,8 +206,8 @@ WHERE
     ctry.country = 'Canada';
 
 /*7d. Sales have been lagging among young families, and you wish to target 
-	all family movies for a promotion. Identify all movies categorized as 
-    family films.*/
+		all family movies for a promotion. Identify all movies categorized as 
+		family films.*/
 SELECT 
     title
 FROM
@@ -263,8 +263,8 @@ FROM
     country ctry ON ctry.country_id = city.country_id;
 
 /*7h. List the top five genres in gross revenue in descending order. 
-	(Hint: you may need to use the following tables: category, film_category, 
-    inventory, payment, and rental.)*/
+		(Hint: you may need to use the following tables: category, film_category, 
+		inventory, payment, and rental.)*/
 SELECT 
     c.name AS genre, SUM(p.amount) AS total_revenue
 FROM
@@ -282,9 +282,9 @@ ORDER BY total_revenue
 LIMIT 5;
 
 /*8a. In your new role as an executive, you would like to have an easy way of 
-	viewing the Top five genres by gross revenue. Use the solution from the 
-	problem above to create a view. If you haven't solved 7h, you can substitute 
-    another query to create a view.*/
+		viewing the Top five genres by gross revenue. Use the solution from the 
+		problem above to create a view. If you haven't solved 7h, you can substitute 
+		another query to create a view.*/
 CREATE VIEW top_five_by_gross AS
     SELECT 
         c.name AS genre, SUM(p.amount) AS total_revenue
